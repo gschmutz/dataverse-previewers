@@ -2,7 +2,12 @@
 
 dirLocal=$(pwd)
 
-/app/localinstall.sh /app/previewers/v1.4 ${DATAPREVIEWERS_URL}
-#/app/localinstall.sh /app/previewers/betatest ${DATAPREVIEWERS_URL}
+echo "Using ${PREVIEWER_PROVIDER_URL}"
 
-cp -r /app/previewers /usr/share/nginx/html
+cd /app
+./localinstall.sh v1.2 ${PREVIEWER_PROVIDER_URL}
+./localinstall.sh v1.3 ${PREVIEWER_PROVIDER_URL}
+./localinstall.sh v1.4 ${PREVIEWER_PROVIDER_URL}
+./localinstall.sh betatest ${PREVIEWER_PROVIDER_URL}
+
+cp -r ./previewers /usr/share/nginx/html
