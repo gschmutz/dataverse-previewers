@@ -1,5 +1,7 @@
 FROM nginx:latest
 
+ENV VERSIONS="v1.4"
+
 RUN apt update && apt install wget
 
 WORKDIR /app
