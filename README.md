@@ -49,6 +49,16 @@ By default, previewers reference several JavaScript libraries and style files fr
 
 and the script will download all external JavaScript and css files required by the previewers for the version you specified and will update the example configuration commands in the 6.1curlcommands.md, 5.2curlcommands.md and pre5.2curlcommands.md files to reference your local URL. In the case above, using the parameters previewers/v1.4 and https://example.com/path would result example curl commands where the TextPreview.html would be available at https://example.com/path/previewers/v1.4/TextPreview.html.
 
+### Running in Docker
+
+There is support for running the previewers locally as a Docker container. The following `docker run` command starts the container
+
+````
+docker run -rm --name dataverse-previewers-provider -e PREVIEWERS_PROVIDER_URL=localhost:8088 -e VERSIONS="v1.4,betatest" -p 8088:80 trivadis/dataverse-previewers-provider:latest
+```
+
+http://localhost:8088/previewers/v1.4/TextPreview.html
+
 ## How do they work?
 
 The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf, spreadsheets) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues).
