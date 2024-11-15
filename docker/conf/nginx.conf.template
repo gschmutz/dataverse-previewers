@@ -1,0 +1,23 @@
+# nginx.conf.template
+server {
+    listen              ${NGINX_HTTP_PORT};
+    server_name         localhost;    
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}
+
+server {
+    listen              ${NGINX_HTTPS_PORT} ssl;
+    server_name         localhost;
+
+    ssl_certificate     /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}

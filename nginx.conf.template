@@ -1,9 +1,0 @@
-# nginx.conf.template
-server {
-    listen ${NGINX_PORT};
-
-    location / {
-        root /usr/share/nginx/html;
-        index index.html;
-    }
-}
