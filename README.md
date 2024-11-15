@@ -51,7 +51,7 @@ and the script will download all external JavaScript and css files required by t
 
 ### Running in Docker
 
-There is support for running the previewers locally as a Docker container. The following `docker run` command starts the previewers in the version(s) listed by the `VERSIONS` environment variable. `PREVIEWERS_PROVIDER_URL` is used to specify the URL of the provider in the format `http(s)://<your host>/<your base path to the previewers`.
+There is support for running the previewers locally as a Docker container. The following `docker run` command starts the previewers in the version(s) listed by the `VERSIONS` environment variable. `PREVIEWERS_PROVIDER_URL` is used to specify the base URL the provider are exposed `http(s)://<your host>/<your base path to the previewers`.
 
 ```bash
 docker run --rm --name dataverse-previewers-provider -e PREVIEWERS_PROVIDER_URL=http://localhost:8088 -e VERSIONS="v1.4,betatest" -p 8088:80 trivadis/dataverse-previewers-provider:latest
